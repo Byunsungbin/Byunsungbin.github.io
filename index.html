@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Official portfolio of Sungbin BYUN, South Korean film director and screenwriter.">
+  <title>Sungbin BYUN — Director</title>
+  <style>
+    :root{--bg:#111;--panel:#171717;--text:#f3f0ea;--muted:#a6a39d;--line:#383735;--accent:#d8d0c2;--max:1440px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5} a{color:inherit;text-decoration:none} img{display:block;width:100%;height:100%;object-fit:cover} button{font:inherit}
+    .wrap{width:min(calc(100% - 48px),var(--max));margin:auto}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:24px}.brand{font-size:14px;letter-spacing:.16em;font-weight:700;white-space:nowrap}.nav{display:flex;gap:26px;align-items:center;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#d0cec8}.nav a:hover,.footer a:hover{color:#fff}.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px}
+    .intro{padding:72px 0 34px;display:flex;align-items:end;justify-content:space-between;gap:28px}.eyebrow,.label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(42px,8vw,106px);letter-spacing:-.075em;line-height:.92;font-weight:500;margin:16px 0 18px}.intro p{margin:0;color:#c5c1ba;font-size:14px}.intro-note{max-width:245px;font-size:12px;color:var(--muted);padding-bottom:5px}
+    .hero{position:relative;min-height:390px;height:min(65vw,700px);max-height:700px;background:#272622;overflow:hidden}.hero img{opacity:.78;transition:transform 1s}.hero:hover img{transform:scale(1.015)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 60%);pointer-events:none}.hero-copy{position:absolute;z-index:1;left:clamp(20px,5vw,64px);right:24px;bottom:clamp(24px,5vw,60px)}.hero-copy .label{color:#e0dcd3}.hero-title{font-size:clamp(30px,6vw,76px);letter-spacing:-.055em;line-height:1;margin:12px 0}.hero-meta{font-size:11px;letter-spacing:.12em;color:#e1ded7;text-transform:uppercase}.hero-link{display:inline-block;margin-top:22px;border-bottom:1px solid #ddd;padding-bottom:5px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+    section{padding:88px 0 0}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:24px}.section-head h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin:0}.section-head span{font-size:11px;color:var(--muted)}.film-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 18px}.film-card{min-width:0}.film-image{aspect-ratio:4/3;overflow:hidden;background:#262522}.film-image img{transition:transform .6s;opacity:.92}.film-card:hover .film-image img{transform:scale(1.025)}.film-info{display:flex;justify-content:space-between;align-items:start;gap:14px;padding-top:14px}.film-info h3{font-size:clamp(17px,2vw,25px);font-weight:500;letter-spacing:-.035em;margin:0 0 5px}.film-info p{font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin:0}.film-index{font-size:11px;color:var(--muted);padding-top:5px;white-space:nowrap}.bio{display:grid;grid-template-columns:1.1fr .9fr;gap:7vw;border-top:1px solid var(--line);padding-top:26px}.bio h2{font-size:clamp(26px,4vw,48px);letter-spacing:-.05em;font-weight:400;line-height:1.1;margin:0;max-width:650px}.bio-copy{font-size:14px;color:#c3c0ba;max-width:540px}.bio-copy p{margin:0 0 16px}.bio-copy .bio-note{font-size:11px;color:var(--muted)}.contact{display:flex;align-items:end;justify-content:space-between;gap:28px;border-top:1px solid var(--line);padding:28px 0 70px}.contact h2{font-size:clamp(32px,5vw,60px);letter-spacing:-.06em;font-weight:400;margin:12px 0 0}.contact-right{text-align:right;font-size:12px;color:var(--muted)}.contact-right a{color:var(--text);border-bottom:1px solid #777;padding-bottom:3px}.footer{border-top:1px solid var(--line);padding:18px 0 24px;display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    @media(min-width:1000px){.film-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:42px 22px}.film-card:first-child{grid-column:span 2}.film-card:first-child .film-image{aspect-ratio:16/9}}
+    @media(max-width:680px){.wrap{width:calc(100% - 32px)}.topbar{height:66px}.nav{display:none;position:absolute;top:65px;left:0;right:0;background:#171717;padding:20px 16px;z-index:5;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.nav.open{display:flex}.menu-btn{display:block}.intro{padding:52px 0 26px;display:block}.intro-note{margin-top:24px}.hero{height:115vw;min-height:400px;max-height:620px}.film-grid{grid-template-columns:1fr;gap:30px}.film-image{aspect-ratio:4/3}.film-info h3{font-size:21px}section{padding-top:64px}.bio{grid-template-columns:1fr;gap:24px}.contact{display:block;padding-bottom:50px}.contact-right{text-align:left;margin-top:28px}.footer{font-size:9px;flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top">SUNGBIN BYUN</a>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#films">Films</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENU</button>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">Film Director · Screenwriter · South Korea</div><h1>Sungbin<br>BYUN</h1><p>Films about the fragile borders between people.</p></div>
+      <div class="intro-note">An independent filmmaker working across fiction, identity, family, and the quiet complexities of human connection.</div>
+    </div>
+
+    <a class="hero" href="#films" aria-label="Explore selected films">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=85" alt="Open rural landscape at dusk" fetchpriority="high">
+      <div class="hero-copy"><div class="label">Selected work · Feature film · 2026</div><div class="hero-title">THE QUIET APPLAUSE</div><div class="hero-meta">South Korea · 80 min 12 sec · A film by Sungbin BYUN</div><span class="hero-link">Explore the films ↘</span></div>
+    </a>
+
+    <section id="films">
+      <div class="section-head"><h2>Selected Films</h2><span>Feature & Short Films</span></div>
+      <div class="film-grid">
+        <!-- Replace each image URL with your own film still. Update titles, years and formats as needed. -->
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=80" alt="Forest and wildlife landscape" loading="lazy"></div><div class="film-info"><div><h3>The Quiet Applause</h3><p>2026 · Feature Film</p></div><span class="film-index">01</span></div></article>
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80" alt="Blue-toned sea landscape" loading="lazy"></div><div class="film-info"><div><h3>Peafowl</h3><p>2022 · Feature Film</p></div><span class="film-index">02</span></div></article>
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1508700115892-45ecu5b?auto=format&fit=crop&w=1200&q=80" alt="Stage lights and performance atmosphere" loading="lazy"></div><div class="film-info"><div><h3>God’s Daughter Dances</h3><p>2020 · Short Film</p></div><span class="film-index">03</span></div></article>
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80" alt="Sunlight filtering through trees" loading="lazy"></div><div class="film-info"><div><h3>Hands and the Wings</h3><p>2019 · Short Film</p></div><span class="film-index">04</span></div></article>
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80" alt="Quiet landscape in morning light" loading="lazy"></div><div class="film-info"><div><h3>The Chicken of Wuzuh</h3><p>2015 · Short Film</p></div><span class="film-index">05</span></div></article>
+        <article class="film-card"><div class="film-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="A solitary road through a landscape" loading="lazy"></div><div class="film-info"><div><h3>Horn</h3><p>2014 · Short Film</p></div><span class="film-index">06</span></div></article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head"><h2>About</h2><span>Director’s Biography</span></div>
+      <div class="bio">
+        <h2>Making films about people at the edges of belonging.</h2>
+        <div class="bio-copy">
+          <p>Sungbin BYUN is a South Korean film director and screenwriter. His work explores identity, disability, gender, family, and the emotional lives of people who are often pushed to the margins.</p>
+          <p>His short films have screened at international festivals, including the Clermont-Ferrand International Short Film Festival and the Busan International Film Festival. His debut feature, <em>Peafowl</em> (2022), continued his exploration of identity and belonging.</p>
+          <p class="bio-note">For a final version, replace this paragraph with your preferred official biography and selected awards / festival credits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact"><div><div class="eyebrow">Get in touch</div><h2>Let’s talk about film.</h2></div><div class="contact-right"><p>For festival, press, and professional inquiries</p><p><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></p><p>Ssarinamu Film · South Korea</p></div></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>© <span id="year"></span> Sungbin BYUN</span><span>Independent filmmaker · South Korea</span><a href="#top">Back to top ↑</a></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const nav=document.getElementById('nav');
+    menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
