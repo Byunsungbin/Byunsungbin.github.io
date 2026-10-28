@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff">
+<meta name="description" content="Sungbin BYUN — Film Director">
+<title>Sungbin BYUN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#111;--muted:#777;--line:#e9e9e9;--pad:clamp(18px,2.7vw,42px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+header{height:66px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}
+.brand{font-size:12px;letter-spacing:.015em;font-weight:400;white-space:nowrap}
+nav{display:flex;align-items:center;gap:clamp(17px,2.5vw,36px)}
+nav a,.menu{font-size:10px;font-weight:300;letter-spacing:.015em}
+nav a{color:#222;transition:opacity .2s}
+nav a:hover,.brand:hover{opacity:.45}
+.menu{display:none;border:0;background:none;color:var(--fg);padding:8px 0}
+main{padding:0 var(--pad);min-height:calc(100vh - 112px)}
+.page{display:none;padding:clamp(34px,5vw,72px) 0 90px}
+.page.active{display:block}
+.home-name{font-size:12px;line-height:1.4;font-weight:300;letter-spacing:.015em;margin:0}
+.home-note{margin-top:10px;font-size:10px;line-height:1.7;color:var(--muted)}
+.page-title{font-size:12px;font-weight:400;letter-spacing:.01em;margin:0 0 30px}
+.film-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 14px;max-width:1100px}
+.film-card{display:block;min-width:0}
+.poster{width:100%;aspect-ratio:2/3;background:#f5f5f5;overflow:hidden}
+.poster img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
+.film-card:hover .poster img{opacity:.8}
+.film-info{display:flex;justify-content:space-between;gap:8px;align-items:baseline;padding-top:8px}
+.film-title{font-size:10px;font-weight:400;line-height:1.5;margin:0}
+.film-meta{font-size:9px;color:var(--muted);white-space:nowrap}
+.detail{display:grid;grid-template-columns:minmax(180px,32%) minmax(0,1fr);gap:clamp(24px,5vw,70px);align-items:start;max-width:1100px}
+.detail-poster{width:100%;max-width:360px;aspect-ratio:2/3;background:#f5f5f5}
+.detail-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.back{font-size:10px;color:var(--muted);display:inline-block;margin:0 0 26px}
+.detail-title{font-size:12px;font-weight:400;margin:0 0 6px}
+.detail-meta{font-size:9px;color:var(--muted);margin:0 0 32px}
+.detail-section{margin-top:22px;padding-top:10px;border-top:1px solid var(--line);max-width:620px}
+.detail-section h3{font-size:9px;font-weight:400;margin:0 0 10px}
+.detail-section p,.festival-list{font-size:10px;font-weight:300;line-height:1.8;margin:0;white-space:pre-line}
+.festival-list{padding:0;list-style:none}
+.bio-layout{display:grid;grid-template-columns:minmax(140px,26%) minmax(0,1fr);gap:clamp(24px,5vw,70px);max-width:1000px}
+.bio-label{font-size:10px;color:var(--muted);margin:0}
+.bio-copy{font-size:10px;line-height:1.9;max-width:620px}
+.bio-copy p{margin:0 0 16px}
+.contact-layout{display:grid;grid-template-columns:minmax(140px,26%) minmax(0,1fr);gap:clamp(24px,5vw,70px);max-width:1000px}
+.contact-label{font-size:10px;color:var(--muted);margin:0}
+.contact-copy{font-size:10px;line-height:1.9}
+.contact-copy p{margin:0 0 10px}
+.contact-copy a{border-bottom:1px solid #bbb}
+footer{padding:14px var(--pad) 18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:#888;font-size:9px}
+@media(min-width:1100px){.film-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 16px}}
+@media(max-width:650px){header{height:60px}.menu{display:block}nav{display:none;position:absolute;top:60px;left:0;right:0;padding:18px var(--pad);background:#fff;border-bottom:1px solid var(--line);z-index:3;flex-direction:column;align-items:flex-start;gap:16px}nav.open{display:flex}.page{padding-top:34px}.film-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 10px}.detail,.bio-layout,.contact-layout{grid-template-columns:1fr;gap:18px}.detail-poster{max-width:260px}.film-title{font-size:10px}.film-meta{font-size:9px}main{min-height:calc(100vh - 106px)}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="#home">Sungbin BYUN</a>
+<button class="menu" id="menu" aria-expanded="false">Menu</button>
+<nav id="nav"><a href="#film">Film</a><a href="#biography">Biography</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<section class="page active" id="page-home">
+<h1 class="home-name">Sungbin BYUN</h1>
+<div class="home-note">Film director and screenwriter<br>South Korea</div>
+</section>
+<section class="page" id="page-film">
+<h1 class="page-title">Film</h1>
+<div class="film-grid" id="filmGrid"></div>
+</section>
+<section class="page" id="page-biography">
+<h1 class="page-title">Biography</h1>
+<div class="bio-layout"><p class="bio-label">Sungbin BYUN</p><div class="bio-copy"><p id="bio1"></p><p id="bio2"></p></div></div>
+</section>
+<section class="page" id="page-contact">
+<h1 class="page-title">Contact</h1>
+<div class="contact-layout"><p class="contact-label">Inquiries</p><div class="contact-copy"><p id="contactIntro"></p><p><a id="email" href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></p><p id="company"></p></div></div>
+</section>
+<section class="page" id="page-detail">
+<div class="detail">
+<div class="detail-poster"><img id="detailImage" alt=""></div>
+<div><a href="#film" class="back">← Film</a><h2 class="detail-title" id="detailTitle"></h2><p class="detail-meta" id="detailMeta"></p>
+<div class="detail-section"><h3>Synopsis</h3><p id="synopsis">To be added.</p></div>
+<div class="detail-section"><h3>Festival selections</h3><ul class="festival-list" id="festivals"></ul></div>
+</div></div>
+</section>
+</main>
+<footer><span>© <span id="year"></span> Sungbin BYUN</span><span>South Korea</span></footer>
+<script>
+const fallbackSite={name:"Sungbin BYUN",bio_paragraph_1:"Sungbin BYUN is a South Korean film director and screenwriter. His work explores identity, disability, gender, family, and the emotional lives of people often pushed to the margins.",bio_paragraph_2:"His short films have screened at international festivals, including the Clermont-Ferrand International Short Film Festival and the Busan International Film Festival. His debut feature, Peafowl (2022), continued his exploration of identity and belonging.",contact_intro:"For festival, press, and professional inquiries",email:"YOUR-EMAIL@example.com",company:"Ssarinamu Film · South Korea"};
+const fallbackFilms=[
+{title:"The Quiet Applause",year:"2026",format:"Feature Film",image:"https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80"},
+{title:"Peafowl",year:"2022",format:"Feature Film",image:"https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80"},
+{title:"God’s Daughter Dances",year:"2020",format:"Short Film",image:"https://images.unsplash.com/photo-1508700115892-45ecu5b?auto=format&fit=crop&w=900&q=80"},
+{title:"Hands and the Wings",year:"2019",format:"Short Film",image:"https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"},
+{title:"The Chicken of Wuzuh",year:"2015",format:"Short Film",image:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80"},
+{title:"Horn",year:"2014",format:"Short Film",image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"}];
+let films=fallbackFilms;const $=id=>document.getElementById(id);const set=(id,v)=>$(id).textContent=v||"";
+function slug(s){return String(s||"film").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function detail(s){const f=films.find(x=>slug(x.title)===s)||films[0];if(!f)return;set("detailTitle",f.title);set("detailMeta",[f.year,f.format].filter(Boolean).join(" · "));$("detailImage").src=f.image||"";$("detailImage").alt=f.alt||f.title;set("synopsis",f.synopsis||f.description||"To be added.");let list=f.festivals||f.festival_selections||[];if(typeof list==="string")list=list.split(/\n|;/).map(x=>x.trim()).filter(Boolean);if(!Array.isArray(list))list=[];if(!list.length)list=["To be added."];$("festivals").innerHTML="";list.forEach(v=>{const li=document.createElement("li");li.textContent=typeof v==="string"?v:[v.name,v.year,v.section].filter(Boolean).join(" · ");$("festivals").appendChild(li)})}
+function route(){let h=decodeURIComponent(location.hash.slice(1)||"home");document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));if(["home","film","biography","contact"].includes(h))$("page-"+h).classList.add("active");else if(h.startsWith("film/")){$("page-detail").classList.add("active");detail(h.slice(5))}else $("page-home").classList.add("active");$("nav").classList.remove("open");$("menu").setAttribute("aria-expanded","false");window.scrollTo(0,0)}
+function render(data){films=Array.isArray(data)&&data.length?data:fallbackFilms;$("filmGrid").innerHTML="";films.forEach(f=>{const a=document.createElement("a");a.className="film-card";a.className="film-card";a.classList.add("card");a.href="#film/"+slug(f.title);const p=document.createElement("div");p.className="poster";const im=document.createElement("img");im.src=f.image||"";im.alt=f.alt||f.title;im.loading="lazy";p.appendChild(im);const info=document.createElement("div");info.className="film-info";info.classList.add("info");const h=document.createElement("h2");h.className="film-title";h.textContent=f.title;const m=document.createElement("span");m.className="film-meta";m.classList.add("meta");m.textContent=[f.year,f.format].filter(Boolean).join(" · ");info.append(h,m);a.append(p,info);$("filmGrid").appendChild(a)})}
+Promise.all([fetch("content/site.json").then(r=>r.ok?r.json():fallbackSite).catch(()=>fallbackSite),fetch("content/films.json").then(r=>r.ok?r.json():fallbackFilms).catch(()=>fallbackFilms)]).then(([s,f])=>{s=s||fallbackSite;set("bio1",s.bio_paragraph_1);set("bio2",s.bio_paragraph_2);set("contactIntro",s.contact_intro);set("company",s.company);set("email",s.email);$("email").href="mailto:"+(s.email||"");render(f);route()});
+window.addEventListener("hashchange",route);$("year").textContent=new Date().getFullYear();$("menu").addEventListener("click",()=>{let open=$("nav").classList.toggle("open");$("menu").setAttribute("aria-expanded",String(open))});
+</script></body></html>
