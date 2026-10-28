@@ -76,3 +76,9 @@ content:
       - name: alt
         label: Image Description
         type: string
+      - name: synopsis
+        label: Film Introduction
+        type: text
+      - name: festivals
+        label: Festival Selections
+        type: text
